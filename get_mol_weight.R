@@ -1,4 +1,4 @@
-weight_prot <- function(lca)
+weight_prot <- function(xp)
   
 lca <- strsplit(entrez_fetch(db="protein", id=xp, rettype='gp'), "\n")
 for(i in seq_along(lca[[1]])){
