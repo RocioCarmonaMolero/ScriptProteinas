@@ -22,5 +22,6 @@ get_IDprot <- function(dat, puntocorte){
     f = nchar(d) - puntocorte
     foo <- c(foo, substr(d, p, f))
   }
+  foo <- unique(foo)
   foo
 } 
