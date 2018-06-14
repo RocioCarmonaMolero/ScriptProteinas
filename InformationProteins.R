@@ -23,9 +23,9 @@ caracterization <- function(datos){
     RNAlen <- c(RNAlen, bm$slen)
     gename <- c(gename, bg$name)
     chr <- c(chr, bg$chromosome)
-    exon <- c(exon, bg$genomicinfo[,5])
-    startp <- c(startp, bg$genomicinfo[,3])
-    stopp <- c(stopp, bg$genomicinfo[,4])
+    exon <- c(exon, bg$genomicinfo$exoncount)
+    startp <- c(startp, bg$genomicinfo$chrstart)
+    stopp <- c(stopp, bg$genomicinfo$chrstop)
     mol_wg <- c(mol_wg, weight_prot(xp))
   }
   
