@@ -23,12 +23,17 @@ caracterization <- function(datos){
     RNAlen <- c(RNAlen, bm$slen)
     gename <- c(gename, bg$name)
     chr <- c(chr, bg$chromosome)
-    exon <- c(exon, bg$genomicinfo$exoncount)
-    startp <- c(startp, bg$genomicinfo$chrstart)
-    stopp <- c(stopp, bg$genomicinfo$chrstop)
+    if(length(bg$genomicinfo) == 0){
+      exon <- c(exon, "mirar")
+      startp <- c(startp, "mirar")
+      stopp <- c(stopp, "mirar")
+    } else {
+      exon <- c(exon, bg$genomicinfo$exoncount)
+      startp <- c(startp, bg$genomicinfo$chrstart)
+      stopp <- c(stopp, bg$genomicinfo$chrstop)
+    }
     mol_wg <- c(mol_wg, weight_prot(xp))
   }
-  
-  dat <- data.frame(naa, accRNA, RNAlen, gename, chr, exon, startp, stopp, mol_wg, row.names = datos)
+  dat <- data.frame(naa, accRNA, RNAlen, gename, chr, exon, startp, stopp, mol_wg, row.names = datos, stringsAsFactors = FALSE)
   dat
 }
