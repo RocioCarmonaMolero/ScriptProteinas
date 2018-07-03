@@ -2,7 +2,7 @@ caracterization <- function(datos){
   naa <- c()
   accRNA <-  c()
   RNAlen <- c()
-  gename <- c()
+  LOC <- c()
   chr <- c()
   exon <- c()
   startp <- c()
@@ -21,7 +21,7 @@ caracterization <- function(datos){
     naa <- c(naa, buq$slen)
     accRNA <- c(accRNA, bm$caption)
     RNAlen <- c(RNAlen, bm$slen)
-    gename <- c(gename, bg$name)
+    LOC <- c(LOC, bg$name)
     chr <- c(chr, bg$chromosome)
     if(length(bg$genomicinfo) == 0){
       exon <- c(exon, "mirar")
@@ -34,6 +34,6 @@ caracterization <- function(datos){
     }
     mol_wg <- c(mol_wg, weight_prot(xp))
   }
-  dat <- data.frame(naa, accRNA, RNAlen, gename, chr, exon, startp, stopp, mol_wg, row.names = datos, stringsAsFactors = FALSE)
+  dat <- data.frame(naa, accRNA, RNAlen, LOC, chr, exon, startp, stopp, mol_wg, row.names = datos, stringsAsFactors = FALSE)
   dat
 }
