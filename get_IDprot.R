@@ -1,4 +1,4 @@
-#previous step, primping the csv data file from the Blast search
+#previous and posterior step, primping the csv data file from the Blast search
 > dat <-  read.csv( cicer_D9V2GJ7401R-Alignment-HitTable.csv , header = FALSE, stringsAsFactors = F)
  
 > dat <- dat[,2]
