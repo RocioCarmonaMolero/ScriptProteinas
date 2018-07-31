@@ -1,3 +1,14 @@
+#previous step, primping the csv data file from the Blast search
+> dat <-  read.csv( cicer_D9V2GJ7401R-Alignment-HitTable.csv , header = FALSE, stringsAsFactors = F)
+ 
+> dat <- dat[,2]
+ 
+> IDprot <- get_IDprot(dat, 2)
+ 
+> candidatos <- c(candidatos, IDprot[!IDprot %in% candidatos])
+
+
+#function itself
 get_IDprot <- function(dat, puntocorte){
   
   foo <- c()
